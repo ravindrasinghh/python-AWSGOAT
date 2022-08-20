@@ -8,6 +8,7 @@ for volume in ec2_info["Volumes"]:
        newlist.append(volume["VolumeId"])
 for i in  newlist:
     ec2_info = ec2.describe_volumes()
-    print("volumes are deleted" + str(i))
+    print("volumes are deleting" + str(i))
     ec2.delete_volume(VolumeId=i)
+    print("volumes are successfully deleted" + str(i))
     
